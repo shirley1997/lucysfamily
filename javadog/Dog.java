@@ -1,11 +1,14 @@
+enum Gender{MALE,FEMALE};
 class Dog extends Animal{
 	
 	int age;
-	// spike;
-	//enum gender{MALE,FEMALE};
-	public Dog(int dogsAge/*,string dogsgender*/){
+	
+	
+	Gender myGender = Gender.MALE;
+	//Gender yourGender = Gender.FEMALE;
+	public Dog(int dogsAge,Gender dogsgender){
 		age = dogsAge;
-		//gender = dogsgender;
+		myGender = dogsgender;
 	}
 	
 	public void bark(){
@@ -21,19 +24,19 @@ class Dog extends Animal{
 	public int getAge(){
 		return age;
 	}
-	/*public string getGender(){
-		return gender;
+	public Gender getGender(){
+		return myGender;
 		
-	}*/
+	}
 	
 	public static void main(String[] args){
-		Dog spike = new Dog(6);
+		Dog spike = new Dog(6,Gender.MALE);
 		spike.bark();
 		spike.run(70);
 		int spikeAge = spike.getAge();
-		//string Gender = spike.getGender();
+		Gender spikeGender = spike.getGender();
 		System.out.println("You're dog is "+ spikeAge +" yrs old!");
-		//System.out.println(spikeGender);
+		System.out.println("Your dog is " + spikeGender + "!");
 		spike.checkStatus();
 		spike.petSpicies();
 		
